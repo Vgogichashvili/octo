@@ -1,0 +1,147 @@
+<div class="main">
+  <h1>Add New Apartment</h1>
+  <form (ngSubmit)="onFormSubmit(form)" name="loginForm"  #form="ngForm" >
+      <div class="inline-groups">
+        <mat-form-field appearance="fill">
+          <mat-label>House</mat-label>
+          <input required name="housetype" ngModel   matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Location</mat-label>
+          <input required name="location" ngModel   matInput>
+        </mat-form-field>         
+      </div>
+
+
+      <div class="inline-groups">
+        <mat-form-field appearance="fill">
+          <mat-label>Guest</mat-label>
+          <input required name="guest" ngModel   matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Bed</mat-label>
+          <input required name="bed" ngModel   matInput>
+        </mat-form-field>         
+      </div>
+
+      <div class="inline-groups">
+          
+        <mat-form-field appearance="fill">
+          <mat-label>Bathroom</mat-label>
+          <input required name="bathroom" ngModel   matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Price</mat-label>
+          <input required name="price" ngModel   matInput>
+        </mat-form-field>         
+          
+      </div>
+
+      <div class="inline-groups">
+        <mat-form-field appearance="fill">
+          <mat-label>Host Image Url</mat-label>
+          <input required name="image" ngModel   matInput>
+        </mat-form-field>  
+        
+          <mat-form-field appearance="fill">
+            <mat-label>Host Image Url</mat-label>
+            <input required name="image2" ngModel matInput>
+          </mat-form-field>
+          
+      </div>
+
+          <div class="inline-groups">
+          
+            <mat-form-field appearance="fill">
+              <mat-label>Host Image Url</mat-label>
+              <input required name="image3" ngModel matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Host Image Url</mat-label>
+              <input required name="image4" ngModel matInput>
+            </mat-form-field>
+          
+          </div>
+
+
+          <div class="inline-groups">
+          
+            <mat-form-field appearance="fill">
+              <mat-label>Host Image Url</mat-label>
+              <input required name="image5" ngModel matInput>
+            </mat-form-field>
+          
+          </div>
+
+     
+
+      <!-- <div>
+        <mat-label for="">image file</mat-label>
+        <input name="image" type="file" (change)="upload($event)" >
+        <button type="button" (click)="uploadImage()">Upload image</button> 
+      </div>
+      <div>
+        <mat-label for="">image file</mat-label>
+        <input name="image2" type="file" (change)="upload2($event)" >
+         <button type="button" (click)="uploadImage()">Upload image</button> 
+      </div>
+      <div>
+        <mat-label for="">image file</mat-label>
+        <input name="image3" type="file" (change)="upload3($event)" >
+         <button type="button" (click)="uploadImage()">Upload image</button> 
+      </div>
+      <div>
+        <mat-label for="">image file</mat-label>
+        <input name="image4" type="file" (change)="upload4($event)" >
+         <button type="button" (click)="uploadImage()">Upload image</button> 
+      </div> 
+      <div>
+        <mat-label for="">image file</mat-label>
+        <input name="image5" type="file" (change)="upload5($event)" >
+         <button type="button" (click)="uploadImage()">Upload image</button> 
+      </div> -->
+
+      <!-- <div class="container mt-5 text-center">
+        <h3 class="mb-5">Angular Image Crop Example</h3>
+        <div class="col-md-12">
+          <input type="file" (change)="onFileChange($event)" />
+        </div>
+        <div class="col-md-8">
+          <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]="4 / 4"
+            [resizeToWidth]="256" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
+            (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()">
+          </image-cropper>
+        </div>
+        <div class="col-md-4">
+          <h6>Image Preview</h6>
+          <img [src]="cropImgPreview" />
+        </div>
+      </div> -->
+     
+      
+
+     <!-- <div class="image-box">
+      <button type="button" (click)="onImageBtnClick(imageInp)" mat-raised-button color="warn">Upload Image</button>
+      <img  [src]="imageSrc" *ngIf="imageSrc" alt="">
+      <input ngModel name="image" (change)="onImageInpUpload($event)" #imageInp [ngStyle]="{
+          'display': 'none'
+      }"   type="file">
+
+     </div>  -->
+      <div class="form-group-inline">
+          
+          <button (click)="onCancelBtnClick()" type="button"   mat-raised-button color="warn">Cancel</button>
+         
+          <button 
+        
+          [disabled]="!form.valid" type="submit"   mat-raised-button color="primary">Add</button>
+   
+     </div>
+  </form>
+</div>
+
+

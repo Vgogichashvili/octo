@@ -1,0 +1,64 @@
+.container {
+    padding: 2% 4%;
+}
+
+.sub-title{
+    margin: 50px 0 20px;
+    font-size: 2.2vw;
+    font-weight: 500;
+    color: #333;
+}
+
+.exculsives{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+    padding-top: 1.5%;
+}
+
+.exculsives div img{
+    width: 100%;
+    border-radius: 10px;
+   
+}
+
+.exculsives div{
+    position: relative;
+}
+
+
+.exculsives div span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%) ;
+    text-align: center;
+    color: #FFF;
+}
+
+.trending{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 50px;
+    margin-bottom: 30px;
+}
+
+.trending div img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.trending h3{
+    font-weight: 600;
+    margin-top: 5%;
+}
+
+
+@media only screen and (max-width:700px){
+    .sub-title{
+        font-size: 6vw;
+        
+    }
+}
+
+

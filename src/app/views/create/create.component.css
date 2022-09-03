@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@200&family=Montserrat:wght@300;500&family=Roboto+Condensed:ital@1&display=swap');
+
+*{
+font-family: 'poppins', sans-serif;
+}
+
+
+.main{
+    text-align: center;
+}
+
+mat-form-field{
+    margin: 5px;
+    width: 25%;
+}
+
+.inline-groups{
+    margin: 0.5%;
+}
+
+button{
+    width: 12.5%;
+    height: 35px;
+}
+
+.form-group-inline{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.image-box{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%!important;
+    height: 100%important;
+    margin-bottom: 1%;
+}
+
+img{
+    width: 250px;
+    height: 150px;
+}
+

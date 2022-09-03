@@ -1,0 +1,65 @@
+<nav class="navbar-white">
+    <img [routerLink]="['/']" src="../../assets/images/logo-red.png" class="logo">
+    <ul class="nav-links" *ngIf="isMenuOpened">
+        <li><a [routerLink]="['/']" class="active">Popular Places</a></li>
+        <li><a [routerLink]="['/']">Travel Outside</a></li>
+        <li><a [routerLink]="['/']">Online Packages</a></li>
+    </ul>
+    <i class="fa-solid fa-bars" (click)="toggleBtn()"></i>
+    <a [routerLink]="['/create']" class="register-btn" *ngIf="isMenuOpened">Add Statement</a>
+   
+</nav>
+
+<div class="house-details" *ngIf="data$ | async as data">
+    <div class="house-title">
+        <h1>Wenge House</h1>
+        <div class="row">
+            <div>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <span>245 Reviews</span>
+            </div>
+            <div class="location">
+                <p>Location: San Francisco, California, United States</p>
+            </div>
+        </div>
+    </div>
+    <div class="gallery" >
+        <div class="gallery-img-1"><img   alt=""></div>
+        <!-- <div ><img [src]="gallery.image2" alt=""></div> -->
+        <!-- <div ><img [src]="gallery.image3" alt=""></div>
+        <div ><img [src]="gallery.image4" alt=""></div>
+        <div ><img [src]="gallery.image5" alt=""></div>  -->
+        <div class="gallery-img-1"><img src="../../../../../assets/images/house-1.png" alt=""></div>
+        <div><img src="../../../../../assets/images/house-2.png" alt=""></div>
+        <div><img src="../../../../../assets/images/house-3.png" alt=""></div>
+        <div><img src="../../../../../assets/images/house-4.png" alt=""></div>
+        <div><img src="../../../../../assets/images/house-5.png" alt=""></div> 
+    
+    </div>
+    <div class="small-details">
+        <h2>Entire rental unit hosted by Brandon</h2>
+        <p>2 guest &nbsp; &nbsp; 2 beds &nbsp; &nbsp; 1 bathroom</p>
+        <h4>$ 100 / day</h4>
+    </div>
+    <hr class="line">
+    <form action="" class="check-form">
+        <div>
+            <label for="">Check-in</label>
+            <input type="text" placeholder="Add Date">
+        </div>
+        <div>
+            <label for="">Check-out</label>
+            <input type="text" placeholder="Add Date">
+        </div>
+        <div class="guest-field">
+            <label for="">Guest</label>
+            <input type="text" placeholder="2 guest">
+        </div>
+        <button type="submit">Check Availablity</button>
+    </form>
+    <app-details></app-details>
+</div>
