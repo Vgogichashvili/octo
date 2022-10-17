@@ -138,6 +138,12 @@ nav .fa-bars{
     font-weight: 500;
 }
 
+
+
+nav .fa-bars {
+    display: none;
+}
+
 /*------------responsive------------*/
 
 @media only screen and (max-width:700px){
@@ -174,6 +180,8 @@ nav .fa-bars{
         color: #FFF;
         font-size: 28px;
     }
+
+
 
     .active::after {
         left: -40px;
@@ -213,6 +221,15 @@ nav .fa-bars{
 
  .about-msg {
      font-size: 15px;
+ }
+
+ .hidemenu {
+     max-height: 300px;
+ }
+
+ .User-box {
+     margin-top: -30px;
+     margin-right: 1%;
  }
 }
 

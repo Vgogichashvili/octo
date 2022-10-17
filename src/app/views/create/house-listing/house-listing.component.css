@@ -202,6 +202,9 @@ nav {
     color: #FFF;
 }
 
+nav .fa-bars {
+    display: none;
+}
 
 
 
@@ -221,6 +224,9 @@ nav {
         padding: 100px 7% 0;
         background: #000;
         text-align: right;
+        max-height: 100px;
+        overflow: hidden;
+        transition: max-height 0.5s;
     }
 
     nav .nav-links li {
@@ -242,15 +248,20 @@ nav {
         font-size: 28px;
     }
 
-    .navbar-white .fa-bars {   
-        display: block;
-    }
+        nav .fa-bars {
+            display: block;
+            position: fixed;
+            top: 4%;
+            right: 7%;
+            color: #FFF;
+            font-size: 28px;
+        }
 
 
     .active::after {
         left: -40px;
         transform: translate(0, 50%);
-        bottom: 50%;
+        bottom: 50%;    
     }
 
     .list-container{
@@ -277,5 +288,8 @@ nav {
         height: 30px;
         line-height: 30px;
         font-size: 12px;
+    }
+    .hidemenu{
+        max-height: 300px;
     }
 }

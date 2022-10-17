@@ -1,11 +1,12 @@
-<nav  class="navbar-white">
-    <img [routerLink]="['/']" src="../../assets/images/logo-red.png" class="logo">
-    <ul class="nav-links" *ngIf="isMenuOpened">
+
+<nav  class="navbar-white" id="navBar" >
+    <img [routerLink]="['/']" src="../../assets/images/logored.png" class="logo">
+    <ul class="nav-links"  >
         <li><a [routerLink]="['/']">Popular Places</a></li>
         <li><a [routerLink]="['/']"  class="active">Travel Outside</a></li>
         <li><a [routerLink]="['/']">Online Packages</a></li>
+        <a [routerLink]="['/create']" class="register-btn" >Add Statement</a>
     </ul>
-    <a [routerLink]="['/create']" class="register-btn" *ngIf="isMenuOpened">Add Statement</a>
     <i class="fa-solid fa-bars" (click)="toggleBtn()"></i>
 </nav>
 
@@ -34,101 +35,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="house">
-                <div class="house-img" >
-                    <img (click)="FullInfoBtn()" src="../../assets/images/image-s2.png">
-                </div>
-                <div class="house-info">
-                    <p>Private Villa in San Francisco</p>
-                    <h3>Deluxe Queen Room With Street View</h3>
-                    <p>1 Bedroom / 1 Bathroom / Wifi / Kitchen</p>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <div class="house-price">
-                        <p>2 Guest</p>
-                        <h4>$ 100 <span>/ day</span></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="house">
-                <div class="house-img">
-                    <img src="../../assets/images/image-s3.png">
-                </div>
-                <div class="house-info">
-                    <p>Private Villa in San Francisco</p>
-                    <h3>Deluxe Queen Room With Street View</h3>
-                    <p>1 Bedroom / 1 Bathroom / Wifi / Kitchen</p>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <div class="house-price">
-                        <p>2 Guest</p>
-                        <h4>$ 100 <span>/ day</span></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="house">
-                <div class="house-img">
-                    <img src="../../assets/images/image-s4.png">
-                </div>
-                <div class="house-info">
-                    <p>Private Villa in San Francisco</p>
-                    <h3>Deluxe Queen Room With Street View</h3>
-                    <p>1 Bedroom / 1 Bathroom / Wifi / Kitchen</p>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <div class="house-price">
-                        <p>2 Guest</p>
-                        <h4>$ 100 <span>/ day</span></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="house">
-                <div class="house-img">
-                    <img src="../../assets/images/image-s5.png">
-                </div>
-                <div class="house-info">
-                    <p>Private Villa in San Francisco</p>
-                    <h3>Deluxe Queen Room With Street View</h3>
-                    <p>1 Bedroom / 1 Bathroom / Wifi / Kitchen</p>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <div class="house-price">
-                        <p>2 Guest</p>
-                        <h4>$ 100 <span>/ day</span></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="house">
-                <div class="house-img">
-                    <img src="../../assets/images/image-s6.png">
-                </div>
-                <div class="house-info">
-                    <p>Private Villa in San Francisco</p>
-                    <h3>Deluxe Queen Room With Street View</h3>
-                    <p>1 Bedroom / 1 Bathroom / Wifi / Kitchen</p>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <div class="house-price">
-                        <p>2 Guest</p>
-                        <h4>$ 100 <span>/ day</span></h4>
-                    </div>
-                </div>
-            </div> -->
+          
         </div>
         <div class="right-col">
             <div class="sidebar">

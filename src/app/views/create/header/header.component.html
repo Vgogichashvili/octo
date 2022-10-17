@@ -6,10 +6,8 @@
         <li><a [routerLink]="['house-listing']">Travel Outside</a></li>
         <li><a [routerLink]="['/']">Online Packages</a></li>
     </ul>
-    <a [routerLink]="['/create']" class="register-btn" *ngIf="isMenuOpened">Add Statement</a> 
-    <i class="fa-solid fa-bars" (click)="toggleBtn()"></i>
-   <!-- <button mat-raised-button (click)="openDialog()" color="warn">Log out</button>  -->
-    <div class="User-box">
+    <a [routerLink]="['/create']" class="register-btn" *ngIf="isMenuOpened" >Add Statement</a> 
+    <div class="User-box" *ngIf="isMenuOpened">
         <button mat-button [matMenuTriggerFor]="menu" style="color: #FFF!important;"><i class="fa-solid fa-user"></i></button>
         <mat-menu #menu="matMenu">
             <button *ngIf="afterLoginDisplay" routerLink="/user-login" mat-menu-item>LogIn</button>
@@ -18,9 +16,9 @@
             <button mat-menu-item (click)="openDialog()" color="warn">Log out</button>
         </mat-menu>
     </div>
+    <i class="fa-solid fa-bars" (click)="toggleBtn()"></i>
 
 
-    <i class="fa-solid fa-bars" (click)="toggleBtn()" ></i>
    </nav>
    <div class="container">
     <h1>Find Your Next Stay</h1>

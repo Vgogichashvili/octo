@@ -40,5 +40,13 @@ button{
 img{
     width: 250px;
     height: 150px;
+    position: relative;
 }
 
+.delBox button{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+}

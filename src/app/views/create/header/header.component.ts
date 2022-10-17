@@ -31,9 +31,11 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  toggleBtn(){
-   this.isMenuOpened = !this.isMenuOpened
-  }
+   toggleBtn(){
+    this.isMenuOpened = !this.isMenuOpened
+    let navBar = document.querySelector("#navBar")
+    navBar?.classList.toggle("hidemenu")
+   }
 
   registerBtn(){
     this.router.navigate(['/user-login'])

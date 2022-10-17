@@ -1,5 +1,5 @@
 <nav class="navbar-white">
-    <img [routerLink]="['/']" src="../../assets/images/logo-red.png" class="logo">
+    <img [routerLink]="['/']" src="../../assets/images/logored.png" class="logo">
     <ul class="nav-links" *ngIf="isMenuOpened">
         <li><a [routerLink]="['/']" class="active">Popular Places</a></li>
         <li><a [routerLink]="['/']">Travel Outside</a></li>
@@ -10,7 +10,7 @@
    
 </nav>
 
-<div class="house-details" *ngIf="data$ | async as data">
+<div class="house-details">
     <div class="house-title">
         <h1>Wenge House</h1>
         <div class="row">
@@ -33,16 +33,21 @@
         <!-- <div ><img [src]="gallery.image3" alt=""></div>
         <div ><img [src]="gallery.image4" alt=""></div>
         <div ><img [src]="gallery.image5" alt=""></div>  -->
-        <div class="gallery-img-1"><img src="../../../../../assets/images/house-1.png" alt=""></div>
-        <div><img src="../../../../../assets/images/house-2.png" alt=""></div>
-        <div><img src="../../../../../assets/images/house-3.png" alt=""></div>
-        <div><img src="../../../../../assets/images/house-4.png" alt=""></div>
-        <div><img src="../../../../../assets/images/house-5.png" alt=""></div> 
+        <div class="gallery-img-1"><img src="../../../../../assets/images/house1.png" alt=""></div>
+        <div><img src="../../../../../assets/images/house2.png" alt=""></div>
+        <div><img src="../../../../../assets/images/house3.png" alt=""></div>
+        <div><img src="../../../../../assets/images/house4.png" alt=""></div>
+        <div><img src="../../../../../assets/images/house5.png" alt=""></div> 
     
     </div>
-    <div class="small-details">
+    <!-- <div class="small-details" *ngFor="let house of data.houses">
         <h2>Entire rental unit hosted by Brandon</h2>
         <p>2 guest &nbsp; &nbsp; 2 beds &nbsp; &nbsp; 1 bathroom</p>
+        <h4>$ 100 / day</h4>
+    </div> -->
+    <div class="small-details" >
+        <h2>Entire rental unit hosted by Brandon</h2>
+        <p ></p>
         <h4>$ 100 / day</h4>
     </div>
     <hr class="line">

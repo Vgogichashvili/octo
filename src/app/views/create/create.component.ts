@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { finalize } from 'rxjs/operators';
 import { FirebaseHttpService } from 'src/app/services/firebase-http.service';
 
 
@@ -12,14 +13,14 @@ import { FirebaseHttpService } from 'src/app/services/firebase-http.service';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  formData:any = NgForm;
-   path!:string;
-   path2!:string;
-   path3!:string;
-   path4!:string;
-   path5!:string;
   imageSrc!:string;
- hide = true;
+
+
+
+  imgSrc:string= '../../../assets/images/uploadimagefile.png';
+  selectedImage:any = null;
+  isSubmited:boolean = false;
+  hide = true;
   @Output()
   formSubmitEmitter:EventEmitter<any> = new EventEmitter();
 
@@ -33,18 +34,35 @@ export class CreateComponent implements OnInit {
     this.initFormDefaultData()
   }
 
-
+  formTemplate = new FormGroup({
+    house: new FormControl(''),
+    location: new FormControl(''),
+    guest: new FormControl(''),
+    bed: new FormControl(''),
+    bathroom: new FormControl(''),
+    price: new FormControl(''),
+    image:new FormControl('')
+  })
 
    onCancelBtnClick(){
      this.router.navigate(['/']);
    }
 
-  
-   onFormSubmit(form:NgForm){
-    this.formSubmitEmitter.emit(form.value)
-    this.firebaseClient.AddHouse(form.value)
-    this.submitAllImages();
-    form.reset();
+
+
+   onFormSubmit(formValue:any){
+    this.isSubmited = true;
+    var filepath = `images/${this.selectedImage.name}_${new Date().getTime()}`
+    const fileRef = this.af.ref(filepath);
+    this.af.upload(filepath,this.selectedImage).snapshotChanges().pipe(
+      finalize(()=>{
+        fileRef.getDownloadURL().subscribe((url)=>{
+          formValue['image'] = url;
+          this.firebaseClient.AddHouse(formValue)
+        })
+      })
+    ).subscribe()
+    this.formTemplate.reset();
     this.router.navigate(['/house-listing']);
       
   
@@ -52,57 +70,30 @@ export class CreateComponent implements OnInit {
 
    initFormDefaultData(){
     if(this.formDefaultData.length!=0){
-      this.formDefaultData.forEach((carItem:any)=>{
-        console.log(carItem)
+      this.formDefaultData.forEach((houseItem:any)=>{
+        console.log(houseItem)
       })
     }
    }
 
-  //  onImageBtnClick(imageInp:any){
-  //   imageInp.click()
-  // }
 
-  // onImageInpUpload(event:any) {
-  //   let self = this;
-  //   let reader = new FileReader();
-  //   reader.addEventListener("load", function(){
-  //     self.imageSrc = reader.result as string;
-  //     self.formData.value.image = reader.result
-  //   })
-  //   reader.readAsDataURL(event.target.files[0])
-  // }
-
-
-upload($event:any){
-    this.path = $event.target.files[0]
+   onImageBtnClick(imageInp:any){
+    imageInp.click()
   }
 
-upload2($event:any){
-    this.path2 = $event.target.files[0]
-  }
 
-upload3($event:any){
-    this.path3 = $event.target.files[0]
+  onImageInpUpload(event:any){
+    if(event.target.files && event.target.files[0]){
+      const reader = new FileReader();
+      reader.onload = (e:any) => this.imgSrc = e.target.result
+      reader.readAsDataURL(event.target.files[0]);
+      this.selectedImage = event.target.files[0];
+    }
+    else{
+      this.imgSrc = '../../../assets/images/uploadimagefile.png'
+      this.selectedImage = null;
+    }
   }
-upload4($event:any){
-    this.path4 = $event.target.files[0]
-  }
-upload5($event:any){
-    this.path5 = $event.target.files[0]
-  }
-
-  submitAllImages(){
-    this.af.upload("/files"+Math.random()+this.path,this.path);
-    this.af.upload("/files"+Math.random()+this.path2,this.path2);
-    this.af.upload("/files"+Math.random()+this.path3,this.path3);
-    this.af.upload("/files"+Math.random()+this.path4,this.path4);
-    this.af.upload("/files"+Math.random()+this.path5,this.path5);
-  }
-
-  //  uploadImage(){
-  //   console.log(this.path);
-  //   this.af.upload("/files"+Math.random()+this.path,this.path)
-  //  }
 
    
 }

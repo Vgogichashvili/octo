@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { combineLatest, map } from 'rxjs';
 import { FirebaseHttpService } from 'src/app/services/firebase-http.service';
 
+
 @Component({
   selector: 'app-house-listing',
   templateUrl: './house-listing.component.html',
@@ -25,17 +26,22 @@ export class HouseListingComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.toggleBtn();
+   
   }
 
-  toggleBtn(){
-   this.isMenuOpened = !this.isMenuOpened
-  }
 
   FullInfoBtn(key:string){
     this.router.navigate(["/house-information"]);
     console.log(key)
      
   }
+
+  
+
+   toggleBtn(){
+    this.isMenuOpened = !this.isMenuOpened
+    let navBar = document.querySelector("#navBar")
+    navBar?.classList.toggle("hidemenu")
+   }
 
 }

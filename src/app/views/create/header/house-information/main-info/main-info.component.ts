@@ -11,15 +11,15 @@ import { FirebaseHttpService } from 'src/app/services/firebase-http.service';
 export class MainInfoComponent implements OnInit {
   formDefaultData:any[] = [];
   key:string ="";
-  houses$ = this.firebaseClient.GetAllhouses();
-  users$ = this.firebaseClient.GetAllUsers();
-  data$ = combineLatest([
-    this.houses$,
-    this.users$,
-  ]).pipe(map(([houses,users]) =>({
-    houses,
-    users,
-  })))
+  // houses$ = this.firebaseClient.GetAllhouses();
+  // users$ = this.firebaseClient.GetAllUsers();
+  // data$ = combineLatest([
+  //   this.houses$,
+  //   this.users$,
+  // ]).pipe(map(([houses,users]) =>({
+  //   houses,
+  //   users,
+  // })))
 
  isMenuOpened:boolean = false;
 
@@ -30,8 +30,9 @@ export class MainInfoComponent implements OnInit {
     this.activatedRoute.params.subscribe((params:Params)=>{
         var key = params["key"];
         this.firebaseClient.GetHouseByKey(key).subscribe((response:any) =>{
-          this.formDefaultData = response;
           console.log(response)
+          this.formDefaultData = response;
+         
         })
       })
   }
