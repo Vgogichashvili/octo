@@ -1,11 +1,12 @@
 <div class="header" >
    <nav id="navBar" >
-    <img [routerLink]="['/']" src=".../../../assets/images/logo.png" class="logo">
+    <img [routerLink]="['/']" src="./../../assets/images/logo.png" class="logo">
     <ul class="nav-links" *ngIf="isMenuOpened">
         <li><a [routerLink]="['/']" class="active">Popular Places</a></li>
         <li><a [routerLink]="['house-listing']">Travel Outside</a></li>
         <li><a [routerLink]="['/']">Online Packages</a></li>
     </ul>
+    
     <a [routerLink]="['/create']" class="register-btn" *ngIf="isMenuOpened" >Add Statement</a> 
     <div class="User-box" *ngIf="isMenuOpened">
         <button mat-button [matMenuTriggerFor]="menu" style="color: #FFF!important;"><i class="fa-solid fa-user"></i></button>
@@ -40,7 +41,7 @@
                 <label for="">Guest</label>
                 <input type="text" placeholder="Add Guest">
             </div>
-            <button type="submit"><img src="../../../assets/images/search.png"></button>
+            <button type="submit"><img src="./../../assets/images/search.png"></button>
         </form>
     </div>
    </div>

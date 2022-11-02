@@ -17,7 +17,7 @@ export class CreateComponent implements OnInit {
 
 
 
-  imgSrc:string= '../../../assets/images/uploadimagefile.png';
+  imgSrc:string= './../../assets/images/uploadimagefile.png';
   selectedImage:any = null;
   isSubmited:boolean = false;
   hide = true;
@@ -90,7 +90,7 @@ export class CreateComponent implements OnInit {
       this.selectedImage = event.target.files[0];
     }
     else{
-      this.imgSrc = '../../../assets/images/uploadimagefile.png'
+      this.imgSrc = './../../assets/images/uploadimagefile.png'
       this.selectedImage = null;
     }
   }
